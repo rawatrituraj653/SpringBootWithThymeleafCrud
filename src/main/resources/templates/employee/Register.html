@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<span th:text="${msg}" ></span>
+	<div class="container"> 
+		<h3 class="h4 sm-2">Employee Registration</h3>
+		<form action="#" th:action="@{/emp/save}" th:object="${employee}" method="post" class="form-group">
+			<input type="text" th:field="*{empName}" class="mb-4 col-4 form-control"
+			 placeholder="Enter Employee Name">
+		
+			 	<input type="text" th:field="*{empSal}" class="mb-4 col-4 form-control"
+			 placeholder="Enter Employee Salary">
+		
+			 	<input type="text" th:field="*{empDept}" class="mb-4 col-4 form-control"
+			 placeholder="Enter Employee Department">
+		
+			 	<input type="text" th:field="*{empAddr}" class="mb-4 col-4 form-control"
+			 placeholder="Enter Employee Address"> 	
+		
+		<input type="submit" value="Register" class="btn btn-primary col-2"/>
+		<input type="reset" value="Reset" class="btn btn-warning col-2"/>
+		 </form>	
+	</div>
+	<a th:href="@{/emp/all}">Show Employee List</a>
+		
+</body>
+</html>
